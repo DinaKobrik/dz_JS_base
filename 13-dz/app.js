@@ -1,8 +1,21 @@
 const user = {
   search: "Вася",
   take: "10",
-  query: function () {
-    return `search=${this.search}&take=${this.take}`;
-  },
 };
-console.log(user.query());
+
+const obj = {
+  id: 22,
+  type: "string",
+  value: "Новая строка",
+  createdAt: Date.now(),
+  updateAt: null,
+};
+
+function query(obj) {
+  return Object.entries(obj)
+    .map(([key, value]) => `${key}=${value}`)
+    .join("&");
+}
+
+console.log(query(user));
+console.log(query(obj));

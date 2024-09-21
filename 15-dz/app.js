@@ -1,10 +1,10 @@
 const ToDoList = {
   tasks: [],
+  taskId: 0,
 
   // Добавить задачу
   addTask: function (title, priority) {
-    const id = this.tasks.length + 1;
-    this.tasks.push({ title, id, priority });
+    this.tasks.push({ title, id: ++this.taskId, priority });
   },
 
   // Удалить задачу по id
